@@ -17,10 +17,7 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-//HELLO
-//HI
-//TESt
-//github test.....again
+
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
