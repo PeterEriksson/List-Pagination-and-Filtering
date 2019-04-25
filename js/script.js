@@ -20,13 +20,15 @@ FSJS project 2 - List Filter and Pagination
 /* eslint-env es6 */
 /* eslint-disable no-console */
 
-//Select all the students
-const lists = document.querySelector('.student-list').children;
+/* eslint-env browser */
 
+//Global variables:
+//Select all the students
+const listOfStudents = document.querySelector('.student-list').children;
 //max nr of students per page
 const studentsPerPage = 10;
 
-console.log(lists);
+const page = 1;
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -43,13 +45,45 @@ console.log(lists);
        "invoke" the function 
 ***/
  
-function showPage(lists) {
-    
-    
-    
+//PAGE PARAMETER?
+
+//function showPage(list, page) {
+//    let startIndex = (page * studentsPerPage) - studentsPerPage;
+//    let endIndex = page * studentsPerPage;
+//    
+//    
+//    for(let i=0; i<=list.length ; i++){
+//        if(i >= startIndex && i <= endIndex){
+//            list[i].style.display = 'block';
+//        }
+//        
+//    }
+//    
+//    
+//}
+
+function showPage(listOfStudents) {
+    let startIndex = (page * studentsPerPage) - studentsPerPage;
+    let endIndex = page * studentsPerPage;
+        
+    for(let i =0; i<listOfStudents.length; i++) {
+        listOfStudents[i].style.display = 'none';
+            //works
+        if(i >= startIndex && i < endIndex){
+             listOfStudents[i].style.display = 'block';
+                //works
+        }
+        
+    }
 }
 
+//list[0].style.display = 'none';
+//list[1].style.display = 'none';
+//works
+showPage(listOfStudents); 
 
+
+ 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
