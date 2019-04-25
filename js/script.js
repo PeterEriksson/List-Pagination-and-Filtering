@@ -45,11 +45,10 @@ let page = 1;
        "invoke" the function 
 ***/
  
-//PAGE PARAMETER?
 
 
 
-function showPage(listOfStudents, page) {
+const showPage = (listOfStudents, page) => {
     let startIndex = (page * studentsPerPage) - studentsPerPage;
     let endIndex = page * studentsPerPage;
         
@@ -64,10 +63,15 @@ function showPage(listOfStudents, page) {
     }
 }
 
-//list[0].style.display = 'none';
-//list[1].style.display = 'none';
-//works
+
 showPage(listOfStudents, page); 
+
+
+const appendPageLinks = (listOfStudents) => {
+    let pagesNeeded = listOfStudents.length / studentsPerPage;
+    
+    
+}
 
 
  
