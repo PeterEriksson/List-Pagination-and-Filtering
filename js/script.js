@@ -28,7 +28,7 @@ const listOfStudents = document.querySelector('.student-list').children;
 //max nr of students per page
 const studentsPerPage = 10;
 
-const page = 1;
+let page = 1;
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -47,22 +47,9 @@ const page = 1;
  
 //PAGE PARAMETER?
 
-//function showPage(list, page) {
-//    let startIndex = (page * studentsPerPage) - studentsPerPage;
-//    let endIndex = page * studentsPerPage;
-//    
-//    
-//    for(let i=0; i<=list.length ; i++){
-//        if(i >= startIndex && i <= endIndex){
-//            list[i].style.display = 'block';
-//        }
-//        
-//    }
-//    
-//    
-//}
 
-function showPage(listOfStudents) {
+
+function showPage(listOfStudents, page) {
     let startIndex = (page * studentsPerPage) - studentsPerPage;
     let endIndex = page * studentsPerPage;
         
@@ -80,7 +67,7 @@ function showPage(listOfStudents) {
 //list[0].style.display = 'none';
 //list[1].style.display = 'none';
 //works
-showPage(listOfStudents); 
+showPage(listOfStudents, page); 
 
 
  
