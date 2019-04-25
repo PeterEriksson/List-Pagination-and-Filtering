@@ -17,7 +17,16 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
+/* eslint-env es6 */
+/* eslint-disable no-console */
 
+//Select all the students
+const lists = document.querySelector('.student-list').children;
+
+//max nr of students per page
+const studentsPerPage = 10;
+
+console.log(lists);
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -33,8 +42,12 @@ FSJS project 2 - List Filter and Pagination
        that will be passed into the parens later when you call or 
        "invoke" the function 
 ***/
-
-
+ 
+function showPage(lists) {
+    
+    
+    
+}
 
 
 /*** 
