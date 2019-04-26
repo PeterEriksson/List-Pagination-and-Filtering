@@ -22,13 +22,12 @@ FSJS project 2 - List Filter and Pagination
 
 /* eslint-env browser */
 
-//Global variables:
+//GLOBAL VARIABLES:
 //Select all the students
 const listOfStudents = document.querySelector('.student-list').children;
 //max nr of students per page
 const studentsPerPage = 10;
-
-let page = 1;
+let pageGlobal = 1;
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -46,8 +45,6 @@ let page = 1;
 ***/
  
 
-
-
 const showPage = (listOfStudents, page) => {
     let startIndex = (page * studentsPerPage) - studentsPerPage;
     let endIndex = page * studentsPerPage;
@@ -63,23 +60,37 @@ const showPage = (listOfStudents, page) => {
     }
 }
 
-
-showPage(listOfStudents, page); 
-
-
-const appendPageLinks = (listOfStudents) => {
-    let pagesNeeded = listOfStudents.length / studentsPerPage;
-    
-    
-}
+//Call showPage
+showPage(listOfStudents, pageGlobal); 
 
 
- 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
 
+
+
+//Determine how many pages are needed for the list by dividing the total number of list items by the max number of items per page
+    let pagesNeeded = Math.ceil(listOfStudents.length / studentsPerPage); //Math.ceil takes away the decimals and rounds upwards. For example: 6.1 -> 7
+
+//Create a div, give it the “pagination” class, and append it to the .page div
+    const pagediv = document.querySelector('.page');
+    const div = document.createElement('div');
+    div.setAttribute("class", 'pagination');
+    pagediv.append(div); //seems to work
+
+//Add a ul to the “pagination” div to store the pagination links
+    let ul = document.createElement('ul');
+   // pagediv.appendChild(ul);
+    div.appendChild(ul);
+
+//for every page, add li and a tags with the page number text
+    for(let i = 0; i <= pagesNeeded; i++){
+        .textContent = i;
+        
+        
+    }
 
 
 
