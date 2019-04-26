@@ -75,22 +75,36 @@ showPage(listOfStudents, pageGlobal);
     let pagesNeeded = Math.ceil(listOfStudents.length / studentsPerPage); //Math.ceil takes away the decimals and rounds upwards. For example: 6.1 -> 7
 
 //Create a div, give it the “pagination” class, and append it to the .page div
-    const pagediv = document.querySelector('.page');
+    const page = document.querySelector('.page');
     const div = document.createElement('div');
     div.setAttribute("class", 'pagination');
-    pagediv.append(div); //seems to work
+    page.append(div); //seems to work
 
 //Add a ul to the “pagination” div to store the pagination links
     let ul = document.createElement('ul');
    // pagediv.appendChild(ul);
     div.appendChild(ul);
 
-//for every page, add li and a tags with the page number text
-    for(let i = 0; i <= pagesNeeded; i++){
-        .textContent = i;
+
+//for every page, add li and a tags with the page number text 
+    for(let i = 1; i <= pagesNeeded; i++){
+        let li = document.createElement('li');
+        let a = document.createElement('a');
         
+        ul.appendChild(li);
+        li.appendChild(a);
         
+        a.textContent = i;  
     }
+
+
+//Add an event listener to each a tag. When they are clicked call the showPage function to display the appropriate page
+
+//a.addEventListener('click', (showPage) => {
+//    
+//    
+//    
+//});
 
 
 
