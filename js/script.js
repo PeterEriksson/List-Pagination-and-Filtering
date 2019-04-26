@@ -27,6 +27,7 @@ FSJS project 2 - List Filter and Pagination
 const listOfStudents = document.querySelector('.student-list').children;
 //max nr of students per page
 const studentsPerPage = 10;
+
 let pageGlobal = 1;
 
 /*** 
@@ -110,15 +111,37 @@ let aTags = document.querySelectorAll('a');
 //Add the active class name to the first pagination link initially.
 aTags[0].className = 'active';
 
+/*
+Add a “click” event listener to each A element. A loop can be helpful here.
+When a pagination link is clicked:
+The active class name should be removed from all pagination links. A loop can be helpful for this step.
+The active class name should be added to the link that was just clicked. The target property of the event object should be useful here.
+The function to show a page should be called, passing in as arguments, the global variable for the list items, and the page number that should be shown. The text content of the A element that was just clicked can be helpful here.
+*/
 
 for(let i=0; i<aTags.length; i++){
-    //aTags[i].style.color = 'purple';
     
-    
-}
+    aTags[i].addEventListener('click', (e) => {
+        
+        
+        //get the nr of the button clicked
+        const clickedA = e.target.textContent
+        
+        //test works
+        console.log(clickedA);
+        
+        //The active class name should be removed from all pagination links.   ??
+        
+            
+       
+        //The active class name should be added to the link that was just clicked.
+        e.target.className = 'active'; //works
+        
+           
+});
 
  
-
+}
 
 
 
