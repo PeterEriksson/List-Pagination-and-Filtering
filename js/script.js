@@ -123,13 +123,14 @@ for(let i=0; i<aTags.length; i++){
     
     aTags[i].addEventListener('click', (e) => {
         
-        //The active class name should be removed from all pagination links.   ??
+        //The active class name should be removed from all pagination links.
         for(let i=0; i<aTags.length; i++){
             aTags[i].classList.remove('active'); //works
         }
         
         //get the nr of the button clicked
         const clickedA = e.target.textContent
+        pageGlobal = clickedA;
         
         //test works
         console.log(clickedA);
@@ -140,7 +141,7 @@ for(let i=0; i<aTags.length; i++){
         e.target.className = 'active'; //works
         
         //The function to show a page should be called
-        
+        showPage(listOfStudents, pageGlobal); //seems to work. 
         
            
 });
