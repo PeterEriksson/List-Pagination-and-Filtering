@@ -95,16 +95,29 @@ showPage(listOfStudents, pageGlobal);
         li.appendChild(a);
         
         a.textContent = i;  
+        a.href = '#';
+        
+        
     }
+    
 
 
 //Add an event listener to each a tag. When they are clicked call the showPage function to display the appropriate page
 
-//a.addEventListener('click', (showPage) => {
-//    
-//    
-//    
-//});
+//select the a tags
+let aTags = document.querySelectorAll('a');
+
+//Add the active class name to the first pagination link initially.
+aTags[0].className = 'active';
+
+
+for(let i=0; i<aTags.length; i++){
+    //aTags[i].style.color = 'purple';
+    
+    
+}
+
+ 
 
 
 
