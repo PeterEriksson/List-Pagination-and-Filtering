@@ -123,19 +123,24 @@ for(let i=0; i<aTags.length; i++){
     
     aTags[i].addEventListener('click', (e) => {
         
+        //The active class name should be removed from all pagination links.   ??
+        for(let i=0; i<aTags.length; i++){
+            aTags[i].classList.remove('active'); //works
+        }
         
         //get the nr of the button clicked
         const clickedA = e.target.textContent
         
         //test works
         console.log(clickedA);
-        
-        //The active class name should be removed from all pagination links.   ??
-        
+    
             
        
         //The active class name should be added to the link that was just clicked.
         e.target.className = 'active'; //works
+        
+        //The function to show a page should be called
+        
         
            
 });
