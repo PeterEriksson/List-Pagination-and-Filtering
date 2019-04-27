@@ -28,6 +28,7 @@ const listOfStudents = document.querySelector('.student-list').children;
 //max nr of students per page
 const studentsPerPage = 10;
 
+//page 1 should be shown initially
 let pageGlobal = 1;
 
 /*** 
@@ -70,7 +71,7 @@ showPage(listOfStudents, pageGlobal);
    functionality to the pagination buttons.
 ***/
 
-
+const appendPageLinks = (listOfStudents) => {
 
 //Determine how many pages are needed for the list by dividing the total number of list items by the max number of items per page
     let pagesNeeded = Math.ceil(listOfStudents.length / studentsPerPage); //Math.ceil takes away the decimals and rounds upwards. For example: 6.1 -> 7
@@ -130,13 +131,12 @@ for(let i=0; i<aTags.length; i++){
         
         //get the nr of the button clicked
         const clickedA = e.target.textContent
+        //change the value of the global variable pageGlobal. We will use pageGLobal when we call the function showPage
         pageGlobal = clickedA;
         
         //test works
         console.log(clickedA);
-    
-            
-       
+
         //The active class name should be added to the link that was just clicked.
         e.target.className = 'active'; //works
         
@@ -148,7 +148,10 @@ for(let i=0; i<aTags.length; i++){
 
  
 }
-
-
+ 
+}
+//call appendPageLinks function
+appendPageLinks(listOfStudents);
+//TODO: clean up code.
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
